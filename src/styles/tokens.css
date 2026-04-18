@@ -1,0 +1,40 @@
+/* Design System - Color Tokens (Brutalist / Minimal)
+   Follow the design-systems-designer-expert-agent rules:
+   - Primary palette: pure black / pure white
+   - One or two high-saturation accents
+   - All colors exposed as CSS variables (semantic aliases included)
+*/
+
+:root {
+  /* Core (black / white) */
+  --color-bg-primary: #FFFFFF;
+  --color-text-primary: #000000;
+  --color-surface: #FFFFFF;
+  --color-border: #000000;
+  --color-muted: #333333; /* high-contrast muted tone */
+
+  /* Accent colors (high-saturation) */
+  --color-accent-1: #00FF66; /* neon green */
+  --color-accent-2: #00A8FF; /* electric blue */
+
+  /* Semantic aliases */
+  --color-primary: var(--color-accent-1);
+  --color-primary-foreground: #000000;
+  --color-secondary: var(--color-accent-2);
+  --color-secondary-foreground: #000000;
+
+  /* Interaction states (explicit values for consistent contrast) */
+  --color-primary-hover: #00E65A;
+  --color-secondary-hover: #009FE6;
+  --color-focus: var(--color-secondary);
+  --color-disabled: #BDBDBD;
+
+  /* Border tokens (brutalist: thick, solid) */
+  --border-width-thick: 2px;
+  --border-color: var(--color-border);
+}
+
+/* Usage example (do not include in build):
+:root { background: var(--color-bg-primary); color: var(--color-text-primary); }
+.button { background: var(--color-primary); color: var(--color-primary-foreground); border: var(--border-width-thick) solid var(--border-color); }
+*/

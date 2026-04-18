@@ -1,0 +1,29 @@
+.download-button {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: var(--border-width-thick) solid var(--border-color);
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.download-button--secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.download-button:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.download-button:disabled {
+  background: var(--color-disabled);
+  color: #ffffff;
+  cursor: not-allowed;
+  border-color: var(--color-disabled);
+}
