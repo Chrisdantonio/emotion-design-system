@@ -182,3 +182,70 @@
     border-right-color: var(--border);
   }
 }
+
+/* Brutalist page layout for App component */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+}
+
+.app__header {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  border-bottom: var(--border-width-thick) solid var(--border-color);
+}
+
+.app__logo {
+  width: 48px;
+  height: auto;
+  display: inline-block;
+  object-fit: contain;
+  border: var(--border-width-thick) solid var(--border-color);
+  padding: var(--spacing-xs);
+  border-radius: 0;
+}
+
+.app__content {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.app__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+/* Merged alt app styles (dark variant) */
+.app-alt {
+  /* kept for compatibility: alias to .app */
+}
+
+.app__hero {
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.app__lead { margin-bottom: var(--spacing-md); }
+
+.app__main { display: block; }
+
+.app__features { padding: var(--spacing-lg); }
+.app__section-title { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-md) 0; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+}
