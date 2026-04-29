@@ -1,3 +1,5 @@
+@import './styles/tokens.css';
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -28,6 +30,13 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+
+  /* Map design tokens to legacy variables for consistency */
+  --bg: var(--color-bg-primary);
+  --text: var(--text-on-light);
+  --text-h: var(--text-on-light);
+  --border: var(--color-section);
+  --accent: var(--color-primary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -108,4 +117,20 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Utility classes to enforce readable foreground on light/dark surfaces */
+.bg-light {
+  background: var(--color-bg-primary) !important;
+  color: var(--text-on-light) !important;
+}
+
+.bg-dark {
+  background: var(--color-text-primary) !important; /* dark surface */
+  color: var(--text-on-dark) !important;
+}
+
+/* Ensure root margin/border color matches section color */
+#root {
+  border-inline-color: var(--color-section);
 }
