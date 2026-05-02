@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import './styles/tokens.css'
 import DownloadButton from './components/atoms/DownloadButton/DownloadButton'

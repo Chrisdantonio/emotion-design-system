@@ -1,4 +1,3 @@
-import React from 'react'
 import './TopNav.css'
 import SearchBar from '../../molecules/SearchBar/SearchBar'
 
