@@ -1,0 +1,58 @@
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+}
+
+.text-input__label {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.text-input__control {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: var(--border-width-thick) solid var(--color-border);
+  border-radius: 0;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+}
+
+.text-input__control::placeholder {
+  color: var(--color-muted);
+}
+
+.text-input--focused .text-input__control {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.text-input__control:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 0;
+}
+
+.text-input--error .text-input__control {
+  border-color: var(--color-danger);
+}
+
+.text-input__error {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+}
+
+.text-input__hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+.text-input--disabled .text-input__control {
+  background: var(--color-border);
+  color: var(--color-muted);
+  cursor: not-allowed;
+  opacity: 0.4;
+}

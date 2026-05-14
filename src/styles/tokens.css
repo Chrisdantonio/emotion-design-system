@@ -1,63 +1,71 @@
-/* Design System - Color Tokens (Brutalist / Minimal)
-   Follow the design-systems-designer-expert-agent rules:
-   - Primary palette: pure black / pure white
-   - One or two high-saturation accents
-   - All colors exposed as CSS variables (semantic aliases included)
+/* Light-first Design Tokens — Minimal / Brutalist influence
+   - Primary palette: white background, black text
+   - Accent color for statuses and calls-to-action
+   - All tokens exposed as CSS variables (semantic names)
 */
 
 :root {
-  /* Core (dark-first variant merged from alt-tokens) */
-  --color-bg-primary: #0b0f14; /* near-black */
-  --color-surface: #0f1720;
-  --color-text-primary: #eef2ff; /* very light for legibility */
-  --color-border: #1f2933;
-  --color-muted: #94a3b8;
+  /* Core */
+  --color-bg-primary: #ffffff;
+  --color-surface: #ffffff;
+  --color-text-primary: #000000;
+  --color-muted: #6b6b6b;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-section: rgba(0, 0, 0, 0.12);
 
-  /* Accent color (electric blue) */
-  --color-primary: #00A8FF; /* electric blue */
-  --color-primary-foreground: #000000;
-  --color-secondary: #00A8FF;
+  /* Primary action — brutalist: black bg, white text */
+  --color-primary: #000000;
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary action — outlined/ghost: white bg, black text */
+  --color-secondary: #ffffff;
   --color-secondary-foreground: #000000;
 
-  /* Interaction states (explicit values for consistent contrast) */
-  --color-primary-hover: #00E65A;
-  --color-secondary-hover: #009FE6;
-  --color-focus: var(--color-secondary);
-  --color-disabled: #BDBDBD;
+  /* Accent (focus / interactive highlight) */
+  --color-accent: #0066ff;
+  --color-accent-foreground: #ffffff;
 
-  /* Border tokens (brutalist: thick, solid) */
+  /* Status colors */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  /* Interaction states */
+  --color-focus: var(--color-accent);
+  --color-disabled: rgba(0, 0, 0, 0.24);
+
+  /* Border tokens */
   --border-width-thick: 2px;
+  --border-width: 1px;
   --border-color: var(--color-border);
 
-  /* Section token - use for page margins / borders so they match section color */
-  --color-section: var(--color-surface);
-
-  /* Contrast helpers */
-  --text-on-light: var(--color-text-primary);
+  /* Readability helpers */
+  --text-on-light: #000000;
   --text-on-dark: #ffffff;
-  --surface-foreground: var(--text-on-light);
 
   /* Typography tokens (sans-serif, rem-based scale) */
   --font-family-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-size-base: 1rem; /* 16px */
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-display: 3.5rem;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --line-height-tight: 1.12;
   --line-height-normal: 1.4;
 
-  /* Spacing tokens (4px base grid) */
+  /* Spacing tokens (8px base grid) */
   --spacing-xxs: 4px;
   --spacing-xs: 8px;
   --spacing-sm: 12px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
-}
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
 
-/* Usage example (do not include in build):
-:root { background: var(--color-bg-primary); color: var(--color-text-primary); }
-.button { background: var(--color-primary); color: var(--color-primary-foreground); border: var(--border-width-thick) solid var(--border-color); }
-*/
+  /* Focus ring */
+  --focus-ring: 2px solid var(--color-accent);
+}
