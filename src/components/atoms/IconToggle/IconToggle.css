@@ -1,0 +1,40 @@
+.icon-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  border: var(--border-width-thick) solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.icon-toggle__icon {
+  font-size: var(--font-size-base);
+}
+
+.icon-toggle--on {
+  background: rgba(0, 102, 255, 0.06);
+  border-color: var(--color-accent);
+}
+
+.icon-toggle--off {
+  background: transparent;
+  border-color: var(--color-border);
+}
+
+.icon-toggle:hover:not(:disabled):not(.icon-toggle--disabled) {
+  border-color: var(--color-text-primary);
+}
+
+.icon-toggle:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.icon-toggle--disabled,
+.icon-toggle:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

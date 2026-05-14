@@ -1,0 +1,39 @@
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.top-nav__brand {
+  flex: 0 0 auto;
+}
+
+.top-nav__logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-nav__search {
+  flex: 1 1 auto;
+}
+
+.top-nav__actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.top-nav--collapsed .top-nav__search {
+  display: none;
+}
+
+.top-nav__badge {
+  background: #d64545;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}

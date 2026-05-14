@@ -1,0 +1,23 @@
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.search-form .text-input {
+  flex: 1 1 auto;
+}
+
+.search-form__no-results {
+  color: var(--muted, #6b7280);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.search-form--loading .text-input__control {
+  opacity: 0.75;
+}
+
+.search-form--no-results .text-input__control {
+  border-color: #d64545;
+}
