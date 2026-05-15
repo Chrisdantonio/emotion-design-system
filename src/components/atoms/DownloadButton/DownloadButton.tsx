@@ -33,7 +33,6 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
     } catch (err) {
       // Keep failure visible in console; caller can wrap component if needed
       // No inline UI error handling per atom responsibilities
-      // eslint-disable-next-line no-console
       console.error('Download failed', err)
     }
   }
