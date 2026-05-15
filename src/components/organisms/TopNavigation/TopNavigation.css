@@ -1,39 +1,81 @@
-.top-nav {
+.top-navigation {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  gap: var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
+  height: 56px;
+  border-bottom: var(--border-width-thick) solid var(--color-border);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
-.top-nav__brand {
-  flex: 0 0 auto;
+.top-navigation__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
 }
 
-.top-nav__logo {
-  font-weight: 700;
-  text-decoration: none;
-  color: inherit;
+.top-navigation__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  display: block;
 }
 
-.top-nav__search {
+.top-navigation__name {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.04em;
+}
+
+.top-navigation__search {
   flex: 1 1 auto;
+  min-width: 0;
 }
 
-.top-nav__actions {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.top-nav--collapsed .top-nav__search {
+.top-navigation--collapsed .top-navigation__search {
   display: none;
 }
 
-.top-nav__badge {
-  background: #d64545;
-  color: white;
-  padding: 0.2rem 0.5rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
+/* Flatten SearchForm for inline nav context */
+.top-navigation .search-form {
+  align-items: center;
+}
+
+.top-navigation .text-input__hint,
+.top-navigation .text-input__error,
+.top-navigation .search-form__no-results {
+  display: none;
+}
+
+.top-navigation__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.top-navigation__notification-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.top-navigation__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--color-danger);
+  color: #fff;
+  font-family: ui-monospace, monospace;
+  font-size: 0.6rem;
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }

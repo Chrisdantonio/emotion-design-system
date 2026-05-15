@@ -5,5 +5,6 @@ export { default as DownloadButton } from './atoms/DownloadButton/DownloadButton
 export { default as SearchBar } from './molecules/SearchBar/SearchBar'
 export { default as SearchForm } from './molecules/SearchForm/SearchForm'
 export { default as FeatureCard } from './molecules/FeatureCard/FeatureCard'
+export { default as ImageCard } from './molecules/ImageCard/ImageCard'
 export { default as TopNav } from './organisms/TopNav/TopNav'
 export { default as TopNavigation } from './organisms/TopNavigation/TopNavigation'
