@@ -11,19 +11,27 @@ type Props = {
 
 const TopNavigation: React.FC<Props> = ({ collapsed = false, showNotification = false }) => {
   return (
-    <nav className={`top-nav ${collapsed ? 'top-nav--collapsed' : 'top-nav--expanded'} ${showNotification ? 'top-nav--with-notification' : ''}`} aria-label="Main navigation">
-      <div className="top-nav__brand">
-        <a href="#" className="top-nav__logo">Emotion</a>
+    <nav
+      className={`top-navigation${collapsed ? ' top-navigation--collapsed' : ''}`}
+      aria-label="Main navigation"
+    >
+      <div className="top-navigation__brand">
+        <img src="/emotion-design-system/logo.png" alt="Emotion Design System" className="top-navigation__logo" />
+        <span className="top-navigation__name">Emotion</span>
       </div>
 
-      <div className="top-nav__search">
+      <div className="top-navigation__search">
         <SearchForm onSearch={async () => []} />
       </div>
 
-      <div className="top-nav__actions">
-        <IconToggle ariaLabel="Toggle sound" />
+      <div className="top-navigation__actions">
+        <div className="top-navigation__notification-wrap">
+          <IconToggle ariaLabel="Toggle sound" />
+          {showNotification && (
+            <span className="top-navigation__badge" aria-label="3 notifications">3</span>
+          )}
+        </div>
         <PrimaryButton>Sign In</PrimaryButton>
-        {showNotification && <span className="top-nav__badge" aria-hidden>3</span>}
       </div>
     </nav>
   )

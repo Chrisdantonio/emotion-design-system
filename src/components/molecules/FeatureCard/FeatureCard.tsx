@@ -6,9 +6,10 @@ type Props = {
   imageSrc?: string
   ctaText?: string
   href?: string
+  onClick?: () => void
 }
 
-export default function FeatureCard({ title, description, imageSrc, ctaText = 'Learn more', href }: Props) {
+export default function FeatureCard({ title, description, imageSrc, ctaText = 'Learn more', href, onClick }: Props) {
   return (
     <article className="feature-card">
       {imageSrc && (
@@ -24,7 +25,7 @@ export default function FeatureCard({ title, description, imageSrc, ctaText = 'L
             {ctaText}
           </a>
         ) : (
-          <button className="feature-card__cta" type="button">{ctaText}</button>
+          <button className="feature-card__cta" type="button" onClick={onClick}>{ctaText}</button>
         )}
       </div>
     </article>
